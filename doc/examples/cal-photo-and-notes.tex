@@ -58,13 +58,13 @@
   % - month and year label
   % - notepad area
   % - extra white space
-  \setlength{\@t@calendar@verticalSpacing}{30mm}%
+  \setlength{\@t@calendar@verticalSpacing}{3mm}%
   %
   % Optionally, disable the notepad area, and then the calendar can be taller.
   % Test the calendar size on a month with six rows.
   %
-  %\renewcommand\notepadContent{}%
-  %\setlength{\@t@calendar@minimumHeight}{\calPaperHeight - 20mm}%
+  \renewcommand\notepadContent{}%
+  \setlength{\@t@calendar@minimumHeight}{\calPaperHeight - 20mm}%
 }
 
 % === January ==========================================================
