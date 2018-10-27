@@ -59,6 +59,22 @@
   \setlength{\@t@calendar@verticalSpacing}{30mm}%
 }
 
+% Fevrier
+\SetPhoto[bleed=3mm, file={DSCF1112.jpg}]{February}
+
+\SetQuote[xOffset=0pt, yOffset=-15mm]{February}{%
+\raggedleft\setlength{\parskip}{10pt}\fontsize{15}{22}\selectfont\color{black!85}%
+Vue de Montréal du belvédère Kondiaronk.
+}
+
+\SetCalendar[]{February}
+
+\SetEvents{February}{%
+\semicolonEndTikzCalendar%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthInlineNotes%
+}{}
+
 % === September ========================================================
 
 \SetPhoto[bleed=3mm, file={/home/anarcat/Pictures/calendes/pictures/2018-09/DSCF7399.JPG}]{September}
@@ -199,7 +215,7 @@ Let others follow it who can!
 
 %\MonthPage[layout=photo and notes, put photo=full page]{January}
 
-%\MonthPage[layout=photo and notes, put photo=full page]{February}
+\MonthPage[layout=photo and notes, put photo=full page]{February}
 
 %\MonthPage[layout=photo and notes, put photo=full page]{March}
 
