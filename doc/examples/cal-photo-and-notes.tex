@@ -4,8 +4,12 @@
   eventsCsv = ./data/holidays.csv,
   markDefaultsCsv = ./data/mark_defaults.csv,
   imageFolder = ./photos/,
-  paperWidth = 282mm,% 297mm - 15mm
-  paperHeight = 195mm,% 210mm - 15mm
+  % A4
+  %paperWidth = 282mm,% 297mm - 15mm
+  %paperHeight = 195mm,% 210mm - 15mm
+  % US Letter
+  paperWidth = 262mm,% 279mm - 15mm
+  paperHeight = 201mm,% 216mm - 15mm
   topMargin = 12mm,
   trimSpace = 15mm,
   %showtrims,
@@ -195,7 +199,7 @@ Let others follow it who can!
 \mbox{}
 
 \AddToShipoutPictureFG*{%
-  \put(\LenToUnit{-3mm},\LenToUnit{-3mm}){%
+  \put(\LenToUnit{-18mm},\LenToUnit{-3mm}){%
     \begin{tikzpicture}
       \node (bg) [
         minimum width=\calPaperWidth + 6mm,
