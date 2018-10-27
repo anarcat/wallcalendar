@@ -4,16 +4,18 @@
   eventsCsv = ./data/holidays.csv,
   markDefaultsCsv = ./data/mark_defaults.csv,
   imageFolder = ./photos/,
-  % A4
-  %paperWidth = 282mm,% 297mm - 15mm
-  %paperHeight = 195mm,% 210mm - 15mm
-  % US Letter
-  paperWidth = 262mm,% 279mm - 15mm
-  paperHeight = 201mm,% 216mm - 15mm
-  topMargin = 12mm,
+  paperWidth = 11in - 15mm,
+  paperHeight = 8.5in - 15mm,
   trimSpace = 15mm,
+  topMargin = 15mm,
   %showtrims,
 ]{wallcalendar}
+
+% |           | Width    | Height   | Width    | Height  |   Aspect |
+% |-----------+----------+----------+----------+---------+----------|
+% | A4        | 297.0 mm | 210.0 mm | 11.69 in | 8.27 in | 1:1.4142 |
+% | US Letter | 279.4 mm | 215.9 mm | 11.0 in  | 8.5 in  | 1:1.2941 |
+% | US Legal  | 355.6 mm | 215.9 mm | 14.0 in  | 8.5 In  | 1:1.6470 |
 
 \makeatletter
 
@@ -57,6 +59,12 @@
   % - notepad area
   % - extra white space
   \setlength{\@t@calendar@verticalSpacing}{30mm}%
+  %
+  % Optionally, disable the notepad area, and then the calendar can be taller.
+  % Test the calendar size on a month with six rows.
+  %
+  %\renewcommand\notepadContent{}%
+  %\setlength{\@t@calendar@minimumHeight}{\calPaperHeight - 20mm}%
 }
 
 % === January ==========================================================
@@ -65,7 +73,7 @@
 \SetCalendar[]{January}
 \SetEvents{January}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
@@ -81,7 +89,7 @@
 
 \SetEvents{February}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
@@ -91,7 +99,7 @@
 \SetCalendar[]{March}
 \SetEvents{March}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 % === April ==========================================================
@@ -100,7 +108,7 @@
 \SetCalendar[]{April}
 \SetEvents{April}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 % === May ==========================================================
@@ -109,7 +117,7 @@
 \SetCalendar[]{May}
 \SetEvents{May}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 % === June ==========================================================
@@ -118,7 +126,7 @@
 \SetCalendar[]{June}
 \SetEvents{June}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 % === July ==========================================================
@@ -127,7 +135,7 @@
 \SetCalendar[]{July}
 \SetEvents{July}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 % === August ==========================================================
@@ -136,7 +144,7 @@
 \SetCalendar[]{August}
 \SetEvents{August}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
@@ -147,7 +155,7 @@
 \SetCalendar[]{September}
 \SetEvents{September}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
@@ -157,13 +165,13 @@
 \SetCalendar[]{October}
 \SetEvents{October}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
 % === November =========================================================
 
-\SetPhoto[bleed=3mm, file={green-mountains-crop}]{November}
+\SetPhoto[bleed=3mm, file={green-mountains-crop-us-letter}]{November}
 
 \SetQuote[xOffset=0pt, yOffset=-15mm]{November}{%
 \raggedleft\setlength{\parskip}{10pt}\fontsize{15}{22}\selectfont\color{black!85}%
@@ -179,13 +187,13 @@ Let others follow it who can!
 
 \SetEvents{November}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
 % === December =========================================================
 
-\SetPhoto[bleed=3mm, file={green-mountains-crop}]{December}
+\SetPhoto[bleed=3mm, file={green-mountains-crop-us-letter}]{December}
 
 \SetQuote[xOffset=0pt, yOffset=-15mm]{December}{%
 \raggedleft\setlength{\parskip}{10pt}\fontsize{15}{22}\selectfont\color{black!85}%
@@ -201,7 +209,7 @@ Let others follow it who can!
 
 \SetEvents{December}{%
 \semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases-2019.csv}%
 \parseMonthInlineNotes%
 }{}
 
