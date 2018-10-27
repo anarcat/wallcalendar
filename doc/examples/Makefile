@@ -65,3 +65,6 @@ mwe:
 
 clean:
 	rm -v *.dvi *.ps *.aux *.log *.bbl *.blg *.bcf *.toc
+
+data/moonphases.csv:
+	( echo 'date;day_text;note' ; moonphases 2019 2020 | cut -f 1,3 -d ' ' | sed 's/ /;/;s/new/\\NewMoon/;s/first/\\FirstQuarter/;s/full/\\FullMoon/;s/third/\\LastQuarter/;s/$$/;/' ) > $@
