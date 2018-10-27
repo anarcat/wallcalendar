@@ -59,6 +59,22 @@
   \setlength{\@t@calendar@verticalSpacing}{30mm}%
 }
 
+% Fevrier
+\SetPhoto[bleed=3mm, file={DSCF1112.jpg}]{February}
+
+\SetQuote[xOffset=0pt, yOffset=-15mm]{February}{%
+\raggedleft\setlength{\parskip}{10pt}\fontsize{15}{22}\selectfont\color{black!85}%
+Vue de Montréal du belvédère Kondiaronk.
+}
+
+\SetCalendar[]{February}
+
+\SetEvents{February}{%
+\semicolonEndTikzCalendar%
+\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
+\parseMonthInlineNotes%
+}{}
+
 % === September ========================================================
 
 \SetPhoto[bleed=3mm, file={/home/anarcat/Pictures/calendes/pictures/2018-09/DSCF7399.JPG}]{September}
@@ -131,27 +147,6 @@ Let others follow it who can!
 \parseMonthInlineNotes%
 }{}
 
-% === December =========================================================
-
-\SetPhoto[bleed=3mm, file={green-mountains-crop}]{December}
-
-\SetQuote[xOffset=0pt, yOffset=-15mm]{December}{%
-\raggedleft\setlength{\parskip}{10pt}\fontsize{15}{22}\selectfont\color{black!85}%
-The Road goes ever on and on\\
-Out from the door where it began.\\
-Now far ahead the Road has gone,\\
-Let others follow it who can!
-
-{\large \textit{Bilbo Baggins}}%
-}
-
-\SetCalendar[]{December}
-
-\SetEvents{December}{%
-\semicolonEndTikzCalendar%
-\parseMonthMarksDayTextInlineUsing{./data/moonphases.csv}%
-\parseMonthInlineNotes%
-}{}
 
 \makeatother
 
@@ -197,12 +192,13 @@ Let others follow it who can!
 
 % === Months ===========================================================
 
+\MonthPage[layout=photo and notes, put photo=full page]{February}
 \MonthPage[layout=photo and notes, put photo=full page]{September}
 
 \MonthPage[layout=photo and notes, put photo=full page]{October}
 
 \MonthPage[layout=photo and notes, put photo=full page]{November}
 
-\MonthPage[layout=photo and notes, put photo=full page]{December}
+%\MonthPage[layout=photo and notes, put photo=full page]{December}
 
 \end{document}
